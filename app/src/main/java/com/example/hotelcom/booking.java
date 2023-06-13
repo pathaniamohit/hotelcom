@@ -23,7 +23,6 @@ public class booking extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_booking);
         home = findViewById(R.id.Home);
-        user = findViewById(R.id.User);
         pay = findViewById(R.id.pay);
         showAmount = findViewById(R.id.editTextText);
 
@@ -31,9 +30,17 @@ public class booking extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(booking.this, "Payment Accepted", Toast.LENGTH_LONG).show();
-                Intent i = new Intent(booking.this , MainActivity.class);
+                Intent i = new Intent(booking.this , view2.class);
                 startActivity(i);
             }
         });
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(booking.this , view2.class);
+                startActivity(i);
+            }
+        });
+        return 0;
     }
 }

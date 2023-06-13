@@ -18,7 +18,7 @@
         android:background="#DA70D6"
         android:fontFamily="sans-serif-medium"
         android:gravity="center"
-        android:text="100 CAD per Night"
+        android:text="80 CAD per Night"
         android:textColor="@color/white"
         android:textSize="25dp"
         tools:layout_editor_absoluteX="0dp" />
@@ -45,7 +45,7 @@
         android:layout_y="162dp"
         android:padding="10dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/ritz"
+        app:srcCompat="@drawable/renaissancemontrealdowntownhotel"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteY="132dp" />
     <TextView
@@ -62,7 +62,7 @@
         tools:layout_editor_absoluteX="0dp" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/button4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_x="117dp"
@@ -100,7 +100,7 @@
         android:gravity="center"
         android:fontFamily="sans-serif-medium"
         android:inputType="text"
-        android:hint="Enter the No. of Nights"
+        android:hint="Enter the no. of Nights"
         android:textColor="#DA70D6"
         android:textSize="30dp"
         tools:layout_editor_absoluteX="30dp"
