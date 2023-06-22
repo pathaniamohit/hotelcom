@@ -8,12 +8,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class booking extends AppCompatActivity {
 
-    TextView home, user;
+    ImageButton home, user;
     Button pay;
     EditText showAmount;
 
@@ -22,10 +23,10 @@ public class booking extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_booking);
-        home = findViewById(R.id.Home);
-        pay = findViewById(R.id.pay);
+        home = findViewById(R.id.imageButton14);
+        user =findViewById(R.id.imageButton15);
+        pay = findViewById(R.id.button3);
         showAmount = findViewById(R.id.editTextText);
-
         pay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -41,6 +42,11 @@ public class booking extends AppCompatActivity {
                 startActivity(i);
             }
         });
-        return 0;
+        user.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(booking.this, "Payment Accepted", Toast.LENGTH_LONG).show();
+            }
+        });
     }
 }

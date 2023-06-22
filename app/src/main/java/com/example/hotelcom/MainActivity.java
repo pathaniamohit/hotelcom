@@ -15,7 +15,6 @@ public class MainActivity extends AppCompatActivity {
     EditText username;
     EditText password;
     Button loginButton;
-    String user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +24,6 @@ public class MainActivity extends AppCompatActivity {
         username = findViewById(R.id.username);
         password = findViewById(R.id.password);
         loginButton = findViewById(R.id.loginButton);
-        user = username.getText().toString();
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,6 +37,9 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-        return 0;
+    }
+    public  String getText(){
+        String data = String.valueOf(username.getText());
+        return data;
     }
 }
