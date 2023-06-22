@@ -25,7 +25,9 @@ public class view2 extends AppCompatActivity {
         more1 = findViewById(R.id.imageButton12);
         more2 = findViewById(R.id.imageButton13);
         user = findViewById(R.id.editTextText4);
-        int users;
+
+        String passedArg = getIntent().getExtras().getString("arg");
+        user.setText(passedArg);
         more1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -33,21 +35,7 @@ public class view2 extends AppCompatActivity {
                 startActivity(i);
             }
         });
-        hotel1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(view2.this , view3.class);
-                startActivity(i);
-            }
-        });
         more2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(view2.this , view4.class);
-                startActivity(i);
-            }
-        });
-        hotel2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(view2.this , view4.class);

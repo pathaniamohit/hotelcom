@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+    public static final String ARG_FROM_MAIN = "arg";
 
     EditText username;
     EditText password;
@@ -33,13 +34,14 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     Toast.makeText(MainActivity.this, "Login Successfully!", Toast.LENGTH_LONG).show();
                     Intent i = new Intent(MainActivity.this , view2.class);
+                    i.putExtra("arg", getText());
                     startActivity(i);
                 }
             }
         });
     }
     public  String getText(){
-        String data = String.valueOf(username.getText());
+        String data = username.getText().toString();
         return data;
     }
 }
