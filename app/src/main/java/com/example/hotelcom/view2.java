@@ -25,7 +25,6 @@ public class view2 extends AppCompatActivity {
         more1 = findViewById(R.id.imageButton12);
         more2 = findViewById(R.id.imageButton13);
         user = findViewById(R.id.editTextText4);
-
         String passedArg = getIntent().getExtras().getString("arg");
         user.setText(passedArg);
         more1.setOnClickListener(new View.OnClickListener() {

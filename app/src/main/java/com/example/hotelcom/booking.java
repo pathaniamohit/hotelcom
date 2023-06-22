@@ -14,8 +14,9 @@ import android.widget.Toast;
 
 public class booking extends AppCompatActivity {
 
-    ImageButton home, user;
+    ImageButton home;
     Button pay;
+    EditText user;
     EditText showAmount;
 
     @SuppressLint("MissingInflatedId")
@@ -24,9 +25,13 @@ public class booking extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_booking);
         home = findViewById(R.id.imageButton14);
-        user =findViewById(R.id.imageButton15);
         pay = findViewById(R.id.button3);
         showAmount = findViewById(R.id.editTextText);
+        user = findViewById(R.id.editTextText4);
+        String passedArg = getIntent().getExtras().getString("arg");
+        user.setText(passedArg);
+        int cost = Integer.parseInt(getIntent().getExtras().getString("arg2"));
+        showAmount.setText(cost);
         pay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -40,12 +45,6 @@ public class booking extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(booking.this , view2.class);
                 startActivity(i);
-            }
-        });
-        user.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(booking.this, "Payment Accepted", Toast.LENGTH_LONG).show();
             }
         });
     }
