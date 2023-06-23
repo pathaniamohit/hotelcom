@@ -13,6 +13,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     public static final String ARG_FROM_MAIN = "arg";
 
+
     EditText username;
     EditText password;
     Button loginButton;
@@ -33,15 +34,11 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "Field Required!", Toast.LENGTH_LONG).show();
                 } else {
                     Toast.makeText(MainActivity.this, "Login Successfully!", Toast.LENGTH_LONG).show();
-                    Intent i = new Intent(MainActivity.this , view2.class);
-                    i.putExtra("arg", getText());
+                    Intent i = new Intent(MainActivity.this, view2.class);
+                    i.putExtra(ARG_FROM_MAIN, username.getText().toString());
                     startActivity(i);
                 }
             }
         });
-    }
-    public  String getText(){
-        String data = username.getText().toString();
-        return data;
     }
 }

@@ -16,8 +16,8 @@ public class booking extends AppCompatActivity {
 
     ImageButton home;
     Button pay;
-    EditText user;
-    EditText showAmount;
+    TextView user;
+    TextView showAmount;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -28,23 +28,40 @@ public class booking extends AppCompatActivity {
         pay = findViewById(R.id.button3);
         showAmount = findViewById(R.id.editTextText);
         user = findViewById(R.id.editTextText4);
-        String passedArg = getIntent().getExtras().getString("arg");
-        user.setText(passedArg);
-        int cost = Integer.parseInt(getIntent().getExtras().getString("arg2"));
-        showAmount.setText(cost);
+        // showing username
+        String passedArg = null;
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            passedArg = extras.getString("arg");
+        }
+        if (passedArg != null) {
+            user.setText(passedArg);
+        }
+        //showing payment
+        String price = null;
+        Bundle extras2 = getIntent().getExtras();
+        if (extras2 != null) {
+            price = String.valueOf(extras.getInt("arg2"));
+        }
+        if (price != null) {
+            user.setText(price);
+        }
         pay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(booking.this, "Payment Accepted", Toast.LENGTH_LONG).show();
-                Intent i = new Intent(booking.this , view2.class);
+                Intent i = new Intent(booking.this, view2.class);
                 startActivity(i);
+                finish(); // closing the app
             }
         });
+
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(booking.this , view2.class);
+                Intent i = new Intent(booking.this, view2.class);
                 startActivity(i);
+                finish(); // closing the app
             }
         });
     }
