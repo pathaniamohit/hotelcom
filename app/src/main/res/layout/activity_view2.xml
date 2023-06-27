@@ -4,109 +4,82 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_gravity="center"
-    android:fontFamily="sans-serif-medium"
     tools:context=".view2">
-        <TextView
-            android:id="@+id/appbar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#DA70D6"
-            android:fontFamily="sans-serif-medium"
-            android:gravity="center"
-            android:text="hotels.com"
-            android:textColor="@color/white"
-            android:textSize="40dp"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:layout_editor_absoluteX="0dp" />
-
-    <TextView
-        android:id="@+id/user1"
-        android:layout_width="62dp"
-        android:layout_height="53dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:drawableLeft="@drawable/user24"
-        android:fontFamily="sans-serif-medium"
-        android:gravity="center"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appbar" />
-
-    <TextView
-            android:id="@+id/listofhotels"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="9dp"
-            android:fontFamily="sans-serif-medium"
-            android:gravity="center"
-            android:paddingLeft="10dp"
-            android:text="hotels.."
-            android:textColor="#DA70D6"
-            android:textSize="40dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/appbar" />
-
 
     <ImageView
         android:id="@+id/imageView1"
-        android:layout_width="204dp"
-        android:layout_height="182dp"
-        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="137dp"
+        android:layout_marginBottom="60dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/ritz"
-        tools:layout_editor_absoluteY="132dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/eline"
         tools:ignore="MissingConstraints" />
 
     <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="204dp"
-        android:layout_height="182dp"
-        android:padding="10dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/bestwestern"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="314dp" />
-
-    <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="204dp"
-        android:layout_height="182dp"
-        android:padding="10dp"
-        tools:ignore="MissingConstraints"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="62dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/renaissancemontrealdowntownhotel"
-        tools:layout_editor_absoluteY="496dp" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView1"
+        app:srcCompat="@drawable/hoteldellao"
+        tools:ignore="MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/imageButton12"
+        android:layout_width="91dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="373dp"
+        android:layout_marginBottom="236dp"
+        android:background="@color/white"
+        android:src="@drawable/baseline_expand_more_24"
+        app:layout_constraintBottom_toTopOf="@+id/imageButton13"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imageButton13"
+        android:layout_width="91dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="2dp"
+        android:background="@color/white"
+        android:src="@drawable/baseline_expand_more_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton12" />
+
+    <ImageButton
+        android:id="@+id/imageButton14"
+        android:layout_width="91dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/white"
+        android:src="@drawable/baseline_account_circle_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="192dp"
-        android:layout_height="94dp"
+        android:id="@+id/editTextText4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="The Ritz-Carlton, Montreal, Canada"
-        android:textSize="22dp"
-        tools:layout_editor_absoluteX="204dp"
-        tools:layout_editor_absoluteY="173dp" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="192dp"
-        android:layout_height="94dp"
-        android:gravity="center"
-        android:text="The Ritz-Carlton, Montreal, Canada"
-        android:textSize="22dp"
-        tools:layout_editor_absoluteX="204dp"
-        tools:layout_editor_absoluteY="532dp" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="192dp"
-        android:layout_height="94dp"
-        android:gravity="center"
-        android:text="BestWestern Downtown, Montreal, Canada"
-        android:textSize="22dp"
-        tools:layout_editor_absoluteX="204dp"
-        tools:layout_editor_absoluteY="349dp" />
-
+        android:inputType="text"
+        android:text=""
+        android:textSize="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.923"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton14"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

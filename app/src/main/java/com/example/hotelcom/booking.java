@@ -8,31 +8,60 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class booking extends AppCompatActivity {
 
-    TextView home, user;
+    ImageButton home;
     Button pay;
-    EditText showAmount;
+    TextView user;
+    TextView showAmount;
 
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_booking);
-        home = findViewById(R.id.Home);
-        user = findViewById(R.id.User);
-        pay = findViewById(R.id.pay);
+        home = findViewById(R.id.imageButton14);
+        pay = findViewById(R.id.button3);
         showAmount = findViewById(R.id.editTextText);
-
+        user = findViewById(R.id.editTextText4);
+        // showing username
+        String passedArg = null;
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            passedArg = extras.getString("arg");
+        }
+        if (passedArg != null) {
+            user.setText(passedArg);
+        }
+        //showing payment
+        String price = null;
+        Bundle extras2 = getIntent().getExtras();
+        if (extras2 != null) {
+            price = String.valueOf(extras.getInt("arg2"));
+        }
+        if (price != null) {
+            user.setText(price);
+        }
         pay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(booking.this, "Payment Accepted", Toast.LENGTH_LONG).show();
-                Intent i = new Intent(booking.this , MainActivity.class);
+                Intent i = new Intent(booking.this, view2.class);
                 startActivity(i);
+                finish(); // closing the app
+            }
+        });
+
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(booking.this, view2.class);
+                startActivity(i);
+                finish(); // closing the app
             }
         });
     }

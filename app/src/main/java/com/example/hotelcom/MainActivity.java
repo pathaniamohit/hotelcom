@@ -11,6 +11,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+    public static final String ARG_FROM_MAIN = "arg";
+
 
     EditText username;
     EditText password;
@@ -24,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         username = findViewById(R.id.username);
         password = findViewById(R.id.password);
         loginButton = findViewById(R.id.loginButton);
+
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -31,7 +34,8 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "Field Required!", Toast.LENGTH_LONG).show();
                 } else {
                     Toast.makeText(MainActivity.this, "Login Successfully!", Toast.LENGTH_LONG).show();
-                    Intent i = new Intent(MainActivity.this , view2.class);
+                    Intent i = new Intent(MainActivity.this, view2.class);
+                    i.putExtra(ARG_FROM_MAIN, username.getText().toString());
                     startActivity(i);
                 }
             }
