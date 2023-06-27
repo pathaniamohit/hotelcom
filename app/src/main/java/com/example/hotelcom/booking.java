@@ -41,10 +41,10 @@ public class booking extends AppCompatActivity {
         String price = null;
         Bundle extras2 = getIntent().getExtras();
         if (extras2 != null) {
-            price = String.valueOf(extras.getInt("arg2"));
+            price = String.valueOf(extras.getDouble("arg2"));
         }
         if (price != null) {
-            user.setText(price);
+            showAmount.setText(price);
         }
         pay.setOnClickListener(new View.OnClickListener() {
             @Override
