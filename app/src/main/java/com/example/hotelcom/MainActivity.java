@@ -13,14 +13,16 @@ import android.widget.Toast;
 import com.example.hotelcom.view2;
 
 public class MainActivity extends AppCompatActivity {
+    EditText User,Password;
+    Button login;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        EditText User = (EditText) findViewById(R.id.username);
-        EditText Password = (EditText) findViewById(R.id.password);
-        Button login = (Button) findViewById(R.id.loginButton);
+         User =findViewById(R.id.username);
+         Password = findViewById(R.id.password);
+        login =  findViewById(R.id.loginButton);
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -30,10 +32,15 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     Toast.makeText(MainActivity.this, "Login Successfully!", Toast.LENGTH_SHORT).show();
                     Intent i = new Intent(MainActivity.this , view2.class);
+                    i.putExtra("arg", getText());
                     startActivity(i);
                 }
 
             }
         });
+    }
+    public String getText(){
+        String Data = User.getText().toString();
+        return Data;
     }
 }

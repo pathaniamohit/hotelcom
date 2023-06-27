@@ -56,7 +56,7 @@ public class view4 extends AppCompatActivity {
     public double getCost() {
         double customer = Double.parseDouble(noOfCustomer.getText().toString());
         double nights = Double.parseDouble(noOfNights.getText().toString());
-        return nights * customer * 100.0;
+        return nights * customer * 75.0;
     }
 
 }
